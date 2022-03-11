@@ -13,7 +13,6 @@ st.title('Credit dashboard')
 # st.write("""# Explore different variables""")
 st.write("""Explore different variables""")
 
-
 url='https://raw.githubusercontent.com/Chmnx/P7-Credit/main/creditdf.csv?token=GHSAT0AAAAAABSMUPNOLUCLPWCLQWJZFQMWYRLO6NA'
 train_df = pd.read_csv(url)
 
