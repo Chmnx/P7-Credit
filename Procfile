@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Model4
+web: sh setup.sh && streamlit run Model4.py
