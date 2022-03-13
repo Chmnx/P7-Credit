@@ -14,7 +14,7 @@ st.title('Credit dashboard')
 st.write("""Explore different variables""")
 
 url='https://github.com/Chmnx/P7-Credit/blob/main/creditdf.csv'
-train_df = pd.read_csv(url)
+train_df = pd.read_csv('creditdf.csv')
 
 clients = train_df.head(100)
 clients = clients[['Client']]
@@ -185,7 +185,7 @@ class IrisSpecies(BaseModel):
        
 class IrisModel:
     def __init__(self):
-        self.df = pd.read_csv(url)
+        self.df = pd.read_csv('creditdf.csv')
         self.model_fname_ = 'f_model.pkl'
         try:
             self.model = joblib.load(self.model_fname_)
