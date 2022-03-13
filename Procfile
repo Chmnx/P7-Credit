@@ -1,1 +1,1 @@
-web: sh setup.sh && uvicorn app4:app4 --reload
+web: sh setup.sh && streamlit run Model4
