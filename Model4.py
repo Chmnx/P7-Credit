@@ -49,8 +49,7 @@ class IrisModel:
         prediction = self.model.predict(data_in)
         probability = self.model.predict_proba(data_in).max()
         return prediction[0], probability
-    
-    
+        
 #endpoint = 'http://localhost:8000/predict'
 
 st.title('Credit dashboard')
