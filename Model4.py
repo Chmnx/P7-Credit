@@ -170,11 +170,6 @@ shap.summary_plot(shap_values[0], X,feature_names=lcol)
 st.pyplot(bbox_inches='tight')
 st.write('---')    
 
-
-
-
-
-
 class IrisSpecies(BaseModel):
     AGE: float
     DAYS_EMPLOYED: float
