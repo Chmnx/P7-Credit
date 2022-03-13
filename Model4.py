@@ -24,7 +24,6 @@ class IrisSpecies(BaseModel):
     AMT_INCOME_TOTAL: float
     AMT_ANNUITY: float
  
-
 class IrisModel:
     def __init__(self):
         self.df = pd.read_csv('creditdf.csv')
