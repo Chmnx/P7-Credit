@@ -142,10 +142,8 @@ explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X)
 
 train_df=train_df.drop(['TARGET'],axis=1)
-lcol2=train_df.columns
-st.write(lcol2)
 
-lcol=['Age','Employment','Id publish','Region','Commuting','Source 2','Source 3','Phone','Gender','Working','Education','Credit','Income','Annuity']
+lcol=['Employment','Id publish','Region','Commuting','Source 2','Source 3','Phone','Gender','Credit','Income','Annuity','Working','Education','Age',]
 
 if score==0:
     st.write('Predicted: Non-Falter')
