@@ -9,8 +9,7 @@ import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 import shap
 
-url='https://github.com/Chmnx/P7-Credit/blob/main/creditdf.csv'
-train_df = pd.read_csv('creditdf.csv')
+train_df = pd.read_csv('finalcreditdf.csv')
 
 import uvicorn
 from fastapi import FastAPI
