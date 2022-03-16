@@ -1,7 +1,7 @@
 import pandas as pd
 import uvicorn
 from fastapi import FastAPI
-from Model4 import CreditModel, CreditSpecies
+from Model import CreditModel, CreditSpecies
 
 train_df = pd.read_csv('finalcreditdf.csv')
 
