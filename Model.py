@@ -25,7 +25,6 @@ class CreditSpecies(BaseModel):
     AMT_INCOME_TOTAL: float
     AMT_ANNUITY: float
  
-
 class CreditModel:
     def __init__(self):
         self.df = pd.read_csv('finalcredit_df.csv')
