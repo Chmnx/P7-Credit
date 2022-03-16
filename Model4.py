@@ -1,31 +1,18 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from pydantic import BaseModel
-import joblib
-import streamlit as st
-import numpy as np
-import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
-import shap
+import uvicorn
+from fastapi import FastAPI
+from Model4 import CreditModel, CreditSpecies
 
 train_df = pd.read_csv('finalcreditdf.csv')
 
-import uvicorn
-from fastapi import FastAPI
-from Model4 import IrisModel, IrisSpecies
-import streamlit as st
-from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse
-
-app4 = FastAPI()
-model = IrisModel()
+app = FastAPI()
+model = CreditModel()
 
 st.title('Credit dashboard')
 
 @app4.post('/predict')
-def predict_species(iris: IrisSpecies):
-    data = iris.dict()
+def predict_species(credit: CreditSpecies):
+    data = credit.dict()
     prediction, probability = model.predict_species(data['AGE'],
                                                     data['DAYS_EMPLOYED'],
                                                     data['DAYS_ID_PUBLISH'],
@@ -46,4 +33,4 @@ def predict_species(iris: IrisSpecies):
 # 4. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
 if __name__ == '__main__':
-    uvicorn.run(app4, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8000)
