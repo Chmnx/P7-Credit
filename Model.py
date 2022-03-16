@@ -45,7 +45,6 @@ class CreditModel:
         model = rf.fit(X_train, y_train)
         return model
 
-    
     def predict_species(self, AGE, DAYS_EMPLOYED,DAYS_ID_PUBLISH,REGION_RATING_CLIENT,REG_CITY_NOT_WORK_CITY,EXT_SOURCE_2,EXT_SOURCE_3,DAYS_LAST_PHONE_CHANGE,CODE_GENDER_F,Working,Higher_Education,AMT_CREDIT,AMT_INCOME_TOTAL,AMT_ANNUITY):
         data_in = [[AGE, DAYS_EMPLOYED,DAYS_ID_PUBLISH,REGION_RATING_CLIENT,REG_CITY_NOT_WORK_CITY,EXT_SOURCE_2,EXT_SOURCE_3,DAYS_LAST_PHONE_CHANGE,CODE_GENDER_F,Working,Higher_Education,AMT_CREDIT,AMT_INCOME_TOTAL,AMT_ANNUITY]]
         prediction = self.model.predict(data_in)
