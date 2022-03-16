@@ -8,8 +8,6 @@ train_df = pd.read_csv('finalcredit_df.csv')
 app = FastAPI()
 model = CreditModel()
 
-st.title('Credit dashboard')
-
 @app4.post('/predict')
 def predict_species(credit: CreditSpecies):
     data = credit.dict()
