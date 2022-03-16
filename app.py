@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from Model import CreditModel, CreditSpecies
 
 train_df = pd.read_csv('finalcredit_df.csv')
-
 app = FastAPI()
 model = CreditModel()
 
