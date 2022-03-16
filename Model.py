@@ -9,6 +9,7 @@ import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 import shap
 
+
 class CreditSpecies(BaseModel):
     AGE: float
     DAYS_EMPLOYED: float
