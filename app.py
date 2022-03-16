@@ -8,7 +8,7 @@ train_df = pd.read_csv('finalcredit_df.csv')
 app = FastAPI()
 model = CreditModel()
 
-@app4.post('/predict')
+@app.post('/predict')
 def predict_species(credit: CreditSpecies):
     data = credit.dict()
     prediction, probability = model.predict_species(data['AGE'],
