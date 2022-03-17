@@ -29,7 +29,7 @@ class CreditSpecies(BaseModel):
 class CreditModel:
     def __init__(self):
         self.df = pd.read_csv('finalcredit_df.csv')
-        self.model_fname_ = 'k_model.pkl'
+        self.model_fname_ = 'try_model.pkl'
         try:
             self.model = joblib.load(self.model_fname_)
         except Exception as _:
