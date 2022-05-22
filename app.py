@@ -1,12 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
-from Model4 import IrisModel, IrisSpecies
+from Model import IrisModel, IrisSpecies
 import streamlit as st
 
-app4 = FastAPI()
+app = FastAPI()
 model = IrisModel()
 
-@app4.post('/predict')
+@app.post('/predict')
 def predict_species(iris: IrisSpecies):
     data = iris.dict()
     prediction, probability = model.predict_species(data['AGE'],
@@ -28,4 +28,4 @@ def predict_species(iris: IrisSpecies):
 # 4. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
 if __name__ == '__main__':
-    uvicorn.run(app4, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8000)
