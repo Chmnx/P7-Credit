@@ -2,7 +2,7 @@
 
 Predict unbalanced classes from credit fault data
 
-Create an app and interactive dashboard that predicts client’s performance
+Create an app and an interactive dashboard that predicts client’s performance
 
 Dashboard displays client information and explains predictions with SHAP
 
