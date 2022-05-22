@@ -8,9 +8,9 @@ import numpy as np
 import plotly.figure_factory as ff
 import matplotlib.pyplot as plt
 import shap
+import requests
 
-
-class CreditSpecies(BaseModel):
+class IrisSpecies(BaseModel):
     AGE: float
     DAYS_EMPLOYED: float
     DAYS_ID_PUBLISH: float
@@ -25,11 +25,11 @@ class CreditSpecies(BaseModel):
     AMT_CREDIT: float
     AMT_INCOME_TOTAL: float
     AMT_ANNUITY: float
- 
-class CreditModel:
+
+class IrisModel:
     def __init__(self):
-        self.df = pd.read_csv('finalcredit_df.csv')
-        self.model_fname_ = 'try_model.pkl'
+        self.df = pd.read_csv('creditdf.csv')
+        self.model_fname_ = 'f_model.pkl'
         try:
             self.model = joblib.load(self.model_fname_)
         except Exception as _:
