@@ -1,15 +1,14 @@
-import pandas as pd
 import uvicorn
 from fastapi import FastAPI
-from Model import CreditModel, CreditSpecies
+from Model4 import IrisModel, IrisSpecies
+import streamlit as st
 
-train_df = pd.read_csv('finalcredit_df.csv')
-app = FastAPI()
-model = CreditModel()
+app4 = FastAPI()
+model = IrisModel()
 
-@app.post('/predict')
-def predict_species(credit: CreditSpecies):
-    data = credit.dict()
+@app4.post('/predict')
+def predict_species(iris: IrisSpecies):
+    data = iris.dict()
     prediction, probability = model.predict_species(data['AGE'],
                                                     data['DAYS_EMPLOYED'],
                                                     data['DAYS_ID_PUBLISH'],
@@ -29,4 +28,4 @@ def predict_species(credit: CreditSpecies):
 # 4. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app4, host='127.0.0.1', port=8000)
